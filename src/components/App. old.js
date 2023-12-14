@@ -1,12 +1,12 @@
-import { useState } from 'react';
+import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 import { ContactEntryForm } from './ContactEntryForm/ContactEntryForm';
 import { ContactList } from './ContactList/ContactList';
 import { SearchFilter } from './SearchFilter/SearchFilter';
 import { GlobalStyle } from './GlobalStyle';
 
-export const App = () => {
-  const [ persona, setPersona] = {
+export class App extends Component {
+  state = {
     contacts: [
       { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
       { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
@@ -16,8 +16,6 @@ export const App = () => {
     filter: '',
   };
 
-
-  
   componentDidMount() {
     const contactsList = JSON.parse(localStorage.getItem('ContactsList'));
 
