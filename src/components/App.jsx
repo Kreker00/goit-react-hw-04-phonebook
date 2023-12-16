@@ -50,7 +50,7 @@ export const App = () => {
 
   const handleDeleteContact = id => {
     setContacts(prevContacts =>
-      setContacts.filter(contact => contact.id !== id)
+      prevContacts.filter(contact => contact.id !== id)
     );
   };
 
